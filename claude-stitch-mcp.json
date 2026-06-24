@@ -1,0 +1,93 @@
+{
+  "name": "stitch-mcp",
+  "version": "1.0.0",
+  "description": "Stitch MCP Server for Claude",
+  "type": "mcp",
+  "commands": {
+    "prefix": "/stitch",
+    "tools": [
+      {
+        "name": "list_projects",
+        "description": "List all Stitch projects",
+        "handler": "listProjects",
+        "examples": [
+          "What Stitch projects do I have?",
+          "Show my projects"
+        ]
+      },
+      {
+        "name": "get_project_details",
+        "description": "Get detailed information about a specific project",
+        "parameters": {
+          "project_id": "string"
+        },
+        "handler": "getProjectDetails",
+        "examples": [
+          "Tell me details about my project 3677573127824787033"
+        ]
+      },
+      {
+        "name": "list_screens",
+        "description": "Get all screens within a project",
+        "parameters": {
+          "project_id": "string"
+        },
+        "handler": "listScreens",
+        "examples": [
+          "Give me all the screens of project 3677573127824787033"
+        ]
+      },
+      {
+        "name": "download_asset",
+        "description": "Download assets (images or HTML) from a screen",
+        "parameters": {
+          "screen_id": "string",
+          "asset_type": "image|html"
+        },
+        "handler": "downloadAsset",
+        "examples": [
+          "Download the image of screen 6393b8177be0490f89eb8f2c1e4cfb37",
+          "Download the HTML of screen 6393b8177be0490f89eb8f2c1e4cfb37"
+        ]
+      },
+      {
+        "name": "generate_screen",
+        "description": "Generate new screens from text prompt",
+        "parameters": {
+          "prompt": "string",
+          "model": "gemini-3-pro|gemini-3-flash"
+        },
+        "handler": "generateScreen",
+        "examples": [
+          "Design a mobile app for people who love skiing in the Alps",
+          "Create a landing page for a podcast"
+        ]
+      },
+      {
+        "name": "enhance_prompt",
+        "description": "Enhance a design prompt using AI",
+        "parameters": {
+          "prompt": "string"
+        },
+        "handler": "enhancePrompt",
+        "examples": [
+          "Enhance this prompt: Design a landing page for a podcast"
+        ]
+      }
+    ]
+  },
+  "authentication": {
+    "methods": [
+      {
+        "type": "api_key",
+        "name": "API Key",
+        "description": "Simple API key authentication"
+      },
+      {
+        "type": "adc",
+        "name": "Application Default Credentials",
+        "description": "Google Cloud authentication"
+      }
+    ]
+  }
+}

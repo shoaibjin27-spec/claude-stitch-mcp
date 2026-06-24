@@ -1,0 +1,32 @@
+{
+  "name": "claude-stitch-mcp",
+  "version": "1.0.0",
+  "description": "Stitch MCP Server for Claude - Design project management through natural language",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/server.js",
+    "install": "bash install-stitch-mcp.sh",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "claude",
+    "mcp",
+    "stitch",
+    "design",
+    "ai",
+    "gemini"
+  ],
+  "author": "shoaibjin27-spec",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
